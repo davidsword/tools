@@ -2,9 +2,12 @@
 /**
  * Get the state of Home Assistants Busy Light entity.
  * 
- * Output just the emoji. For use in Argos top bar.
+ * Output just the emoji, ie "🔴". For use in Argos top bar.
+ * 
+ * @see https://github.com/p-e-w/argos
  */
-require('_config.php');
+
+require('_config.php'); // constants.
 
 echo sanitize( str_replace("\n",'',explode(" ",get_busy_light_ha_status()->state)[0]) );
 

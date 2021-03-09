@@ -5,8 +5,11 @@
  * results in string output of:
  * `JIRA-123 Task Name`
  * 
- * For use with Argos 
- * @see https://github.com/p-e-w/argos
+ * For use with Argos, Bitbar, Infinite Menu Bar, ect
+ * 
+ * @link https://github.com/p-e-w/argos
+ * @link https://github.com/matryer/xbar-plugins
+ * @link https://apps.apple.com/us/app/infinite-menu-bar/id1439179659?mt=12 
  */
 require __DIR__.'/_config.php';
 

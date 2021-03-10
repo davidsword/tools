@@ -7,6 +7,13 @@
       "busy-light": "available"
     },
     {
+      "title"     : "online",
+      "presence"  : "auto",
+      "emoji"     : "",
+      "text"      : "",
+      "busy-light": "available"
+    },
+    {
       "title"     : "away",
       "presence"  : "away",
       "emoji"     : ":yellow-dot:",
@@ -51,8 +58,8 @@
     {
       "title"     : "busy",
       "presence"  : "away",
-      "emoji"     : ":red-dot:",
-      "text"      : "focused work",
+      "emoji"     : ":deep-work:",
+      "text"      : "notifications off, in deep work",
       "busy-light": "busy"
     },
     {

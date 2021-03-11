@@ -1,5 +1,6 @@
 .DS_Store
 _config.php
+_config.conf
 a8c*
 vip*
 phpcs/

@@ -14,7 +14,7 @@
       "busy-light": "available"
     },
     {
-      "title"     : "away",
+      "title"     : "brb",
       "presence"  : "away",
       "emoji"     : ":yellow-dot:",
       "text"      : "brb",

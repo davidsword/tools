@@ -8,6 +8,8 @@
  * usage: 
  *   `$ utc 12`
  *   `$ pt 12:30`
+ * 
+ * @for PATH
  */
 
 define('MAIN_TIMEZONE', 'PT');

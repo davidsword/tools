@@ -9,6 +9,8 @@
  * 
  * usage searching for a match that has `backup` in it: 
  *   `$ esp backup`
+ * 
+ * @for PATH
  */
 
 require '_helpers.php';

@@ -5,7 +5,7 @@
  * results in string output of:
  * `JIRA-123 Task Name`
  * 
- * For use with Argos, Bitbar, Infinite Menu Bar, ect
+ * @for use with Argos, Bitbar, Infinite Menu Bar, ect
  * 
  * @link https://github.com/p-e-w/argos
  * @link https://github.com/matryer/xbar-plugins

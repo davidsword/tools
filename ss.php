@@ -9,6 +9,8 @@
  *   `$ ss busy`
  *   `$ ss active`
  *   `$ ss meeting`
+ * 
+ * @for PATH
  */
 
 require '_config.php';

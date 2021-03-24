@@ -2,9 +2,13 @@
 /**
  * Get the state of Home Assistants Busy Light entity.
  * 
- * Output just the emoji, ie "🔴". For use in Argos top bar.
+ * Output just the emoji, ie "🔴". 
  * 
- * @see https://github.com/p-e-w/argos
+ * @for use with Argos, Bitbar, Infinite Menu Bar, ect
+ * 
+ * @link https://github.com/p-e-w/argos
+ * @link https://github.com/matryer/xbar-plugins
+ * @link https://apps.apple.com/us/app/infinite-menu-bar/id1439179659?mt=12 
  */
 
 require('_config.php'); // constants.

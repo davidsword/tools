@@ -12,8 +12,9 @@
  */
 
 require('_config.php'); // constants.
+require('_helpers.php');
 
-echo sanitize( str_replace("\n",'',explode(" ",get_busy_light_ha_status()->state)[0]) );
+echo sanitize( str_replace("\n",'',explode(" ",get_busy_light_ha_status()->state)[0]), true );
 
 /**
  * https://developers.home-assistant.io/docs/api/rest/
@@ -37,14 +38,4 @@ function get_busy_light_ha_status( ) {
 		die( curl_error($ch) );
 	curl_close( $ch );
 	return json_decode($buffer);
-}
-
-/**
- * keep it simple, only normal chars
- *
- * @param string $dirty
- * @return string sanitized string
- */
-function sanitize( $dirty) {
-	return filter_var( htmlspecialchars( strip_tags($dirty) ), FILTER_SANITIZE_STRING );
 }

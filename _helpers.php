@@ -17,6 +17,9 @@ function truncate( $string, $length = 30 ) {
 	}
 }
 
-function sanitize( $v ) {
+function sanitize( $v, $preserve_emojis = false ) {
+	if ( $preserve_emojis ) {
+		return filter_var( htmlspecialchars( strip_tags($v) ), FILTER_SANITIZE_STRING );
+	}
 	return preg_replace( '/[^a-zA-Z0-9 _\-]/', '', $v );
 }

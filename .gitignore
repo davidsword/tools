@@ -9,3 +9,4 @@ vendor/
 cache/
 .env
 node_modules
+bin/

@@ -6,3 +6,6 @@ vip*
 phpcs/
 vendor/
 .vscode/
+cache/
+.env
+node_modules

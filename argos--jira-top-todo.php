@@ -13,7 +13,7 @@
  */
 require __DIR__.'/_config.php';
 
-echo truncate( jira_get_top_issue(), 70 );
+echo truncate( jira_get_top_issue(), 40 );
 
 /**
  * Curl JIRA for high priority in IN PROGRESS colunm.

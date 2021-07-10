@@ -13,5 +13,6 @@ if ps ax | grep -v grep | grep $@ > /dev/null
 then
   wmctrl -xa $@
 else
+  # @TODO this doesnt always launch apps, need a work around or to redo.
   $@
 fi

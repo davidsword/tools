@@ -9,24 +9,24 @@
  * @link https://apps.apple.com/us/app/infinite-menu-bar/id1439179659?mt=12 
  */
 
-require('_config.php'); // constants.
-require('_helpers.php');
+require '_config.php'; // constants.
+require '_helpers.php';
 
-// https://developers.home-assistant.io/docs/api/rest/
-$weather = get_rest_response( HOME_ASSISTANT_HOST_URL.'/api/states/'.HOME_ASSISTANT_WEATHER, HOME_ASSISTANT_TOKEN );
-$office = get_rest_response( HOME_ASSISTANT_HOST_URL.'/api/states/'.HOME_ASSISTANT_OFFICE_TEMP, HOME_ASSISTANT_TOKEN);
+echo get_outside_temp() . ' / ' . get_inside_temp();
 
-$emojis = [
-    // https://www.piliapp.com/symbol/
-    'cloudy'        => '☁',
-    'partlycloudy'  => '🌥',
-    'sunny'         => '☀',
-    'clear-night'   => '☾',
-];
+function get_outside_temp() {
+	// via https://www.mathworks.com/help/thingspeak/rest-api.html
+	$outside = get_rest_response(LOCAL_WEATHER_API);
+	// @todo check response before outputting
+	return temp($outside->feeds[99]->field1);
+}
 
-$emoji = $emojis[$weather->state] ?? $weather->state;
+function get_inside_temp() {
+	// via https://developers.home-assistant.io/docs/api/rest/
+	$inside = get_rest_response(HOME_ASSISTANT_HOST_URL.'/api/states/'.HOME_ASSISTANT_OFFICE_TEMP, HOME_ASSISTANT_TOKEN);
+	return temp($inside->state);
+}
 
-$outside = $emoji.' ' . intval( $weather->attributes->temperature ) . '°';
-$inside  = intval(round($office->state)). '°';
-
-echo "{$outside} / {$inside}";
+function temp( $int ) {
+	return intval(round($int)). '°';
+}

@@ -12,13 +12,22 @@
 require '_config.php'; // constants.
 require '_helpers.php';
 
-echo get_outside_temp() . ' / ' . get_inside_temp();
+echo get_outside_temp() . ' ( '. get_outside_airquality() .' ) / ' . get_inside_temp();
 
 function get_outside_temp() {
 	// via https://www.mathworks.com/help/thingspeak/rest-api.html
-	$outside = get_rest_response(LOCAL_WEATHER_API);
+	$outside = get_rest_response(HOME_ASSISTANT_HOST_URL.'/api/states/'.HOME_ASSISTANT_OUTSIDE_TEMP, HOME_ASSISTANT_TOKEN);
+
 	// @TODO check response before outputting
-	return temp($outside->feeds[99]->field1);
+	return temp($outside->state);
+}
+
+function get_outside_airquality() {
+	// via https://www.mathworks.com/help/thingspeak/rest-api.html
+	$outside_air = get_rest_response(HOME_ASSISTANT_HOST_URL.'/api/states/'.HOME_ASSISTANT_OUTSIDE_AIR, HOME_ASSISTANT_TOKEN);
+
+	// @TODO check response before outputting
+	return intval($outside_air->state);
 }
 
 function get_inside_temp() {

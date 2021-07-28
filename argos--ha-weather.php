@@ -14,6 +14,8 @@
 require '_config.php'; // constants.
 require '_helpers.php';
 
+// @TODO check data before outputting for cleaner errors
+
 echo get_outside_temp() . ' ( '. get_outside_airquality() .'pm2.5 ) / ' . get_inside_temp();
 
 function get_outside_temp() {
